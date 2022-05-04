@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "6185966c-8aac-484e-a54a-4718bade4bfb",
+		"name": "week3 - Node.js express(Heroku)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[GET] 取得 posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://young-reef-69693.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"young-reef-69693",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] 新增 posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"snow\",\n    \"tags\": [\"幹話\"],\n    \"type\":\"group\",\n    \"content\":\"test\",\n    \"image\":\"怕.jpb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://young-reef-69693.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"young-reef-69693",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE]  刪除 posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://young-reef-69693.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"young-reef-69693",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] 刪除單筆 posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://young-reef-69693.herokuapp.com/posts/:id",
+					"protocol": "https",
+					"host": [
+						"young-reef-69693",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PATCH] 編輯 posts",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"image\":\"笑.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://young-reef-69693.herokuapp.com/posts/6272758fa760e12b1ed615c3",
+					"protocol": "https",
+					"host": [
+						"young-reef-69693",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6272758fa760e12b1ed615c3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	]
+}
